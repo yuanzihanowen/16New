@@ -1,0 +1,6 @@
+library('Rblpapi')
+blpConnect() ## Build the connection to bbg first
+
+opt <- c("periodicitySelection"="DAILY")
+ticker <- "USDJPY Curncy"
+px_daily <- bdh(ticker,"PX_LAST",start.date=Sys.Date()-365,options=opt)
