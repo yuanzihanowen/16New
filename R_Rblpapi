@@ -6,4 +6,6 @@ ticker <- c("USDJPY Curncy","USSW2 Curncy")
 for (tk in ticker){
   px_daily <- bdh(tk,"PX_LAST",start.date=Sys.Date()-365,options=opt)
   px_tick <- getBars(tk,barInterval=30,startTime =Sys.time()-60*24*60*60,endTime=Sys.time())
+  write.csv(px_daily,paste(tk,"_d.csv"))
+  write.csv(px_tick,paste(tk,"_30m.csv"))
 }
